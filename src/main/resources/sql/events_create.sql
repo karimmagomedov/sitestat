@@ -1,7 +1,7 @@
 CREATE schema IF NOT EXISTS sitestatdb;
 SET search_path TO sitestatdb;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA sitestatdb;
-CREATE TABLE IF NOT EXISTS events(
+CREATE TABLE IF NOT EXISTS sitestatdb.events(
   event_id UUID PRIMARY KEY NOT NULL UNIQUE,
   user_id VARCHAR(256) NOT NULL,
   page_id VARCHAR(256) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS events(
 );
 CREATE schema IF NOT EXISTS sitestattestdb;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA sitestattestdb;
-CREATE TABLE IF NOT EXISTS events(
+CREATE TABLE IF NOT EXISTS sitestattestdb.events(
   event_id UUID PRIMARY KEY NOT NULL UNIQUE,
   user_id VARCHAR(256) NOT NULL,
   page_id VARCHAR(256) NOT NULL,
