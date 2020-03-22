@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=sitestatdb
+    url: jdbc:postgresql://host.docker.internal:5432/postgres?currentSchema=sitestatdb
     username: postgres
     password: password
     driverClassName: org.postgresql.Driver
