@@ -25,6 +25,9 @@ public class StatisticServiceImpl implements StatisticService {
         this.rangeStatisticRepository = rangeStatisticRepository;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Statistic addEventAndGetStat(String userId, String pageId) {
         statisticRepository.addEvent(userId, pageId);
@@ -32,6 +35,11 @@ public class StatisticServiceImpl implements StatisticService {
             statisticRepository.getTodaysUniqueUsersNumber());
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @throws IllegalArgumentException if the end date is invalid
+     */
     @Override
     public RangeStatistic getRangeStat(Date begin, Date end) {
         if (end.before(begin)) {

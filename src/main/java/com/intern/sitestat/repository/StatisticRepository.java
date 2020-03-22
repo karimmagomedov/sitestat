@@ -13,7 +13,13 @@ public interface StatisticRepository {
      */
     void addEvent(String userId, String pageId);
 
+    /**
+     * Method returns today's number of visits
+     */
     int getTodaysVisitsNumber();
 
+    /**
+     * Method returns today's number of unique users
+     */
     int getTodaysUniqueUsersNumber();
 }

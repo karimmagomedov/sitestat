@@ -29,6 +29,13 @@ public class StatisticController {
         this.statisticService = statisticService;
     }
 
+    /**
+     * Method for adding the event in a storage and get a statistic.
+     *
+     * @param userId id of the user
+     * @param pageId id of the page
+     * @return the {@code Statistic} represents numbers of today's visits and unique users
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "Creates event, returns today's statistic.", response = Statistic.class)
@@ -39,6 +46,13 @@ public class StatisticController {
         return statisticService.addEventAndGetStat(userId, pageId);
     }
 
+    /**
+     * Method for getting the statistic in the specific range.
+     *
+     * @param begin the start date of the range
+     * @param end   the end date of the range
+     * @return the {@code RangeStatistic} represents numbers of visits, unique and permanent users in the specific range.
+     */
     @GetMapping
     @ApiOperation(value = "Get the statistic in specific time range.", notes = "Date has following format: yyyy-MM-dd",
         response = RangeStatistic.class)

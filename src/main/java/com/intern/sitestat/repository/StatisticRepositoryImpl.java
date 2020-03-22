@@ -21,16 +21,25 @@ public class StatisticRepositoryImpl implements StatisticRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addEvent(String userId, String pageId) {
         jdbcTemplate.update(SQL_ADD_EVENT, idGenerator.generateId(), userId, pageId);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getTodaysVisitsNumber() {
         return jdbcTemplate.queryForObject(SQL_GET_TODAY_VISITS_NUM, Integer.class);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getTodaysUniqueUsersNumber() {
         return jdbcTemplate.queryForObject(SQL_TODAYS_UNIQUE_USERS, Integer.class);

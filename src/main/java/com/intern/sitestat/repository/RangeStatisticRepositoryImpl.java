@@ -22,16 +22,25 @@ public class RangeStatisticRepositoryImpl implements RangeStatisticRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getRangeVisitsNumber(Date begin, Date end) {
         return jdbcTemplate.queryForObject(SQL_RANGE_VISITS_NUMBER, new Object[]{begin, end}, Integer.class);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getRangeUniqueUsersNumber(Date begin, Date end) {
         return jdbcTemplate.queryForObject(SQL_RANGE_UNIQUE_USERS_NUMBER, new Object[]{begin, end}, Integer.class);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getPermanentUsersNumber(Date begin, Date end) {
         return jdbcTemplate.queryForObject(SQL_PERMANENT_USERS_NUMBER, new Object[]{begin, end}, Integer.class);

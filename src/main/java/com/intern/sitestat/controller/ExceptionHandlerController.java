@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExceptionHandlerController {
 
+    /**
+     * Method for mapping the exception to the response of the bad request.
+     *
+     * @param exception the incoming exception for mapping
+     * @return {@code String} message from the exception
+     */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public String exceptionHandler(Exception exception) {

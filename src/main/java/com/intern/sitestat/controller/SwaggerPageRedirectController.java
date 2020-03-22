@@ -8,6 +8,9 @@ import springfox.documentation.annotations.ApiIgnore;
 @Controller
 public class SwaggerPageRedirectController {
 
+    /**
+     * Method for redirecting to the swagger page.
+     */
     @GetMapping("/")
     public String redirectFromStartPage() {
         return "redirect:swagger-ui.html";
