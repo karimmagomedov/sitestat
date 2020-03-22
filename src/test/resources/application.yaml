@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=sitestattestdb
+    username: postgres
+    password: password
+    driverClassName: org.postgresql.Driver
